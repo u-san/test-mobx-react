@@ -29,6 +29,7 @@ function LoggedOutMenu() {
   return <menu>
     <Link to="/">Browse</Link>
     <Link to="/page/about">About</Link>
+    <Link to="/page/helloworld">HelloWorld</Link>
     <Link to="/page/register">Register</Link>
     <Link to="/page/login">Login</Link>
   </menu>

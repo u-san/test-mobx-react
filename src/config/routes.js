@@ -3,6 +3,7 @@ import About from '../pages/About'
 import Login from '../pages/Login'
 import Logout from '../pages/Logout'
 import Register from '../pages/Register'
+import HelloWorld from '../pages/HelloWorld'
 
 export default [
   {
@@ -10,6 +11,9 @@ export default [
     component: Home
   },
   {
+    path: '/page/helloworld',
+    component: HelloWorld
+  },{
     path: '/page/about',
     component: About
   },
