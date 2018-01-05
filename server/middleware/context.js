@@ -1,8 +1,10 @@
 import { useStaticRendering } from 'mobx-react'
 import { toJS } from 'mobx'
-import Account from '../models/Account'
+// import Account from '../models/Account'
 import state from '../../src/stores/State'
 import context from '../../src/config/context'
+import dbs from '../models'
+
 
 useStaticRendering(true)
 
@@ -18,7 +20,8 @@ export default async(ctx, next) => {
   ctx.token = ctx.headers['token'] || ctx.cookies.get('token')
 
   // Check if logged in
-  ctx.account = await Account.getAccount(ctx.token)
+  // ctx.account = await Account.getAccount(ctx.token)
+  ctx.account = ''
 
   // Create state for SSR
   const state = JSON.parse(stateClone)
@@ -28,6 +31,7 @@ export default async(ctx, next) => {
   }
 
   ctx.context = context(state)
+  ctx.context.dbs = dbs
 
   await next()
 }

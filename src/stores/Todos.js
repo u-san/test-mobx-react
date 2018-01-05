@@ -22,6 +22,8 @@ export default class Todos {
   }
 
   @action async browse() {
-    this.state.todos = await this.request.get(`api/todos`)
+     const res = await this.request.get(`api/todos`)
+     console.warn(res)
+     this.state.todos = res;
   }
 }

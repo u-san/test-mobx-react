@@ -19,7 +19,7 @@ const context = createContext(state)
 
 // React to changes
 autorun(context)
-
+console.warn(context)
 // Render HTML on the browser
 render(<AppContainer>
   <BrowserRouter>
