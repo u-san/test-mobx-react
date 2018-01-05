@@ -20,6 +20,7 @@ class Todo extends Model {
     }
 
     static collectionName() {
+        
         return 'Todo';
     }
 }
